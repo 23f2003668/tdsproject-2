@@ -29,6 +29,13 @@ import requests
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+import uvicorn
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Railway sets PORT automatically
+    uvicorn.run("app:app", host="0.0.0.0", port=port)
+
 
 # Optional image conversion
 try:
